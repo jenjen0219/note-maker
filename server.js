@@ -14,3 +14,15 @@ const PORT = process.env.port || 3000;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//GET ROUTES 
+
+//sending user to index page 
+app, get("/", function (req, res) {
+    res.sendFile(path.join(_dirName, "public/index.html"));
+});
+
+//starting the server 
+app.listen(PORT, function () {
+    console.log(`App is listening on port ${PORT}`);
+});
