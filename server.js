@@ -8,4 +8,9 @@ const express = require("express");
 //creating the instance of the express app
 const app = express();
 //setting the value of our port
-const PORT = process.env.port || 3001;
+const PORT = process.env.port || 3000;
+
+//configuring the express app to work with stattic files, parse URL enconded data, and parse JSON data
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
