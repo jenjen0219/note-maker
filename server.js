@@ -18,9 +18,15 @@ app.use(express.json());
 //GET ROUTES 
 
 //sending user to index page 
-app, get("/", function (req, res) {
-    res.sendFile(path.join(_dirName, "public/index.html"));
+app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "public/assets/html/index.html"));
 });
+
+//getting the user to the notes page
+app.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "public/assets/html/notes.html"));
+});
+
 
 //starting the server 
 app.listen(PORT, function () {
